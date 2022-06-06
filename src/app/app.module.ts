@@ -1,18 +1,26 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
 
-import { AppRoutingModule } from './app-routing.module';
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { StoreModule } from '@ngrx/store';
 import { AppComponent } from './app.component';
+import { HttpClientModule } from '@angular/common/http';
+import { postReducer } from './components/detail/store/reducers/post-reducer';
+import { DetailPageComponent } from './components/detail/detail-component';
+import { FormPageComponent } from './components/form/form-component';
+
+
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    HttpClientModule,
+    StoreModule.forRoot({post: postReducer})
   ],
-  providers: [],
+  declarations: [
+   DetailPageComponent,
+   AppComponent,
+   FormPageComponent
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
