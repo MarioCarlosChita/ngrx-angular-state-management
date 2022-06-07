@@ -12,7 +12,7 @@ import { PostState } from './store/state/post-state';
 export class DetailPageComponent implements OnInit {
   post:Observable<Post[]> ;
   constructor(private store:Store<PostState>) {
-    this.post = this.store.select('post');
+    this.post = this.store.select('posts');
   }
 
   ngOnInit(): void {

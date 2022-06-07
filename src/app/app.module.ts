@@ -4,9 +4,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { StoreModule } from '@ngrx/store';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
-import { postReducer } from './components/detail/store/reducers/post-reducer';
 import { DetailPageComponent } from './components/detail/detail-component';
 import { FormPageComponent } from './components/form/form-component';
+import { reducers } from './components/detail/store/reducers';
 
 
 
@@ -14,7 +14,7 @@ import { FormPageComponent } from './components/form/form-component';
   imports: [
     BrowserModule,
     HttpClientModule,
-    StoreModule.forRoot({post: postReducer})
+    StoreModule.forRoot(reducers)
   ],
   declarations: [
    DetailPageComponent,
