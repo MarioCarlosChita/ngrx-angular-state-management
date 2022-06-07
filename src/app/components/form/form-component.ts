@@ -2,7 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { FormBuilder, FormGroup } from "@angular/forms";
 import { Store } from "@ngrx/store";
 import { Post } from "src/app/models/post";
-import { ADDPOST } from "../detail/store/action/post-action";
+import { AddPosts } from "../detail/store/action/post-action";
 import { PostState } from "../detail/store/state/post-state";
 
 
@@ -29,7 +29,7 @@ export class FormPageComponent implements OnInit {
       title: "novo titulo",
       userId: 3
     };
-    this.store.dispatch(new ADDPOST(params));
+    this.store.dispatch(new AddPosts(params));
   }
 
 

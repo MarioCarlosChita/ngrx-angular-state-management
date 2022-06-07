@@ -1,13 +1,9 @@
 import { ActionReducerMap } from "@ngrx/store";
 import { Post } from "src/app/models/post";
+import { PostState } from "../state/post-state";
 import { postReducer } from "./post-reducer";
 
 
-export interface AppState {
-  posts: Post[]
-}
-
-
-export const reducers: ActionReducerMap<AppState> = {
+export const reducers: ActionReducerMap<PostState> = {
   posts: postReducer
 }

@@ -7,6 +7,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { DetailPageComponent } from './components/detail/detail-component';
 import { FormPageComponent } from './components/form/form-component';
 import { reducers } from './components/detail/store/reducers';
+import { EffectsModule } from '@ngrx/effects';
+import { PostEffects } from './components/detail/store/effects/post-effects';
 
 
 
@@ -14,7 +16,8 @@ import { reducers } from './components/detail/store/reducers';
   imports: [
     BrowserModule,
     HttpClientModule,
-    StoreModule.forRoot(reducers)
+    StoreModule.forRoot(reducers),
+    EffectsModule.forRoot([PostEffects])
   ],
   declarations: [
    DetailPageComponent,
